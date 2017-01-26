@@ -19,33 +19,55 @@ BASIC TRACK: 1-9
 ADVANCED TRACK: 10-13
 =======================================================
 */
+document.getElementById("q0").innerHTML = "JS Page Connected Properly!";
+document.getElementById("q0").classList.add("status-good");
 
 // 1. Without using Math.min(), write a function called minimum(),
 //    that takes two numbers from a user,
 //    and outputs the smaller number into the HTML page.
+function minimum(num1, num2) {
+    if (num1 <= num2) {
+        document.getElementById("q1").innerHTML = num1;
+    } else {
+        document.getElementById("q1").innerHTML = num2;
+    }
+}
 
 
 
 
-
-// 2. Create a new function called minimum3(), 
+// 2. Create a new function called minimum3(),
 //    to find the smallest of three numbers,
-//    input by a user, 
+//    input by a user,
 //    and the smallest displayed within the HTML page.
-
+function minimum3(num1,num2,num3) {
+  document.getElementById("q2").innerHTML=Math.min(num1, num2, num3);
+}
 
 
 
 // 3. Declare a function called sum() that takes an array of numbers as an argument adds them together and displays the result within the HTML page.
 //    i.e. sum([1, 2, 3, 4]) should return 10.
-
+function sum (numbers){
+  total = 0;
+  for (var i = 0; i < numbers.length; i++) {
+    total  += numbers[i];
+  }
+  return total;
+}
 
 
 
 
 // 4. Declare a function called multiply() that takes an array of numbers and multiplies them together.
 //    i.e. multiply([1, 2, 3, 4]) should return 24.
-
+function multiply (numbers){
+  total = 1;
+  for (var i = 0; i < numbers.length; i++) {
+    total  *= numbers[i];
+  }
+  return total;
+}
 
 
 
@@ -54,6 +76,15 @@ ADVANCED TRACK: 10-13
 // 5. Write a function called filterSixPlus() that takes the following array and removes words
 //    that are less than six characters.
 var words = ["window", "table", "cup", "knife", "barstool", "glass", "charger", "outlet"];
+function filterSixPlus(arrayOfWords) {
+    var filtered = [];
+    for (var i = 0; i < arrayOfWords.length; i++) {
+      if (arrayOfWords[i].length >= 6){
+        filtered.push(arrayOfWords[i]);
+      }
+    }
+    return filtered;
+}
 
 
 
@@ -62,7 +93,9 @@ var words = ["window", "table", "cup", "knife", "barstool", "glass", "charger", 
 
 // 6. Use a function to ask a user for a temperature in Celsius and converts it to Fahrenheit.
 //    HINT: You may need to use parseFloat to convert the user's string input to a float.
-
+function convertCToF(temperature) {
+   return parseFloat(temperature) * 1.8 + 32;
+}
 
 
 
@@ -84,8 +117,8 @@ var words = ["window", "table", "cup", "knife", "barstool", "glass", "charger", 
 
 
 // 9. http://games.usvsth3m.com/javascript-under-pressure/
-//    Have fun with these! 
-//    Get as far as you can and record your progress and time. 
+//    Have fun with these!
+//    Get as far as you can and record your progress and time.
 //    We'll try this again in a few weeks!
 
 
@@ -122,10 +155,3 @@ var words = ["window", "table", "cup", "knife", "barstool", "glass", "charger", 
 //     it will prompt the user to enter another guess and tell the user if the guess was
 //     too high or too low. This continues until the correct guess is entered.
 //     When the correct guess is entered the user is given a success message with the correct number.
-
-
-
-
-
-
-
