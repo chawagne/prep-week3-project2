@@ -104,14 +104,29 @@ function convertCToF(temperature) {
 // 7. Adding to the code in #6, ask the user a second time to determine whether they'd like to convert from Fahrenheit to Celsius
 //    or from Celsius to Fahrenheit. To keep it simple, instruct them to use "F to C" or "C to F".
 //    Display an error if they do not follow the rules.
-
+function convertTemp(temperature, type){
+  if (type === "C to F") {
+    return parseFloat(temperature) * 1.8 + 32;
+  }
+  else {
+    return (parseFloat(temperature)  - 32) / 1.8;
+  }
+}
 
 
 
 // 8. Write a function countBs() that takes a string as its only argument and returns
 //    a number that indicates how many uppercase “B” characters are in the string.
 //    HINT: Google charAt()
-
+function countBs(string){
+  var count = 0;
+  for (var i = 0; i < string.length; i++) {
+    if (string.charAt(i) === "B"){
+      count++;
+    }
+  }
+  return count;
+}
 
 
 
